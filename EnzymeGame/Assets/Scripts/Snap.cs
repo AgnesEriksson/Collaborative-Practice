@@ -10,18 +10,6 @@ public class Snap : MonoBehaviour
 
     public Sprite connectedSprite;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void OnTriggerEnter2D(Collider2D col)
     {
         if (isSnapped)
@@ -31,6 +19,7 @@ public class Snap : MonoBehaviour
 
         if (col.gameObject.tag == id)
         {
+            GameManager.instance.addPiece();
             GetComponent<SpriteRenderer>().sprite = connectedSprite;
             Destroy(col.gameObject);
             isSnapped = true;
