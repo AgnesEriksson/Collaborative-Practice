@@ -28,12 +28,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (connectedPieces == 2 && gameLevel != 3)
+        if (connectedPieces == 2 && gameLevel != 3 && SceneManager.GetActiveScene().buildIndex != 4)
         {
             connectedPieces = 0;
             gameLevel++;
-            
-            loadLevel(gameLevel);
+
+            StartCoroutine(loadLevel(gameLevel));
         }
 
         if (gameLevel == 3 && connectedPieces == 2)
@@ -41,12 +41,16 @@ public class GameManager : MonoBehaviour
             connectedPieces = 0;
             gameLevel = 1;
 
-            loadLevel(gameLevel);
+            SceneManager.LoadScene("EndMenu");
         }
     }
 
-    void loadLevel(int level)
+    IEnumerator loadLevel(int level)
     {
+        SceneManager.LoadScene("FactScreen");
+
+        yield return new WaitForSeconds(5);
+
         SceneManager.LoadScene(level.ToString());
     }
 
