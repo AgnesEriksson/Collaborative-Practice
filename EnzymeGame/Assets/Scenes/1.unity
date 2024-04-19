@@ -1355,7 +1355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6de7dca29fa33244bab85d2879007237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 2
+  id: 4
   isSnapped: 0
   connectedSprite: {fileID: 21300000, guid: cc7afccef09c0344b9debaa18b1df789, type: 3}
   prefab: {fileID: 6625919480670735526, guid: d68924d34a602f543aacfe8602f4ea9b, type: 3}
