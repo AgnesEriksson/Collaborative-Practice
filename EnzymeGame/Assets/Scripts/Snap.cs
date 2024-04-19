@@ -36,8 +36,8 @@ public class Snap : MonoBehaviour
 
     IEnumerator PrefabPlay()
     {
-        //GameObject go = Instantiate(prefab, this.transform.position, Quaternion.identity);
+        GameObject go = Instantiate(prefab, this.transform.position, Quaternion.identity);
         yield return new WaitForSeconds(2f);
-        //Destroy(go);
+        Destroy(go);
     }
 }

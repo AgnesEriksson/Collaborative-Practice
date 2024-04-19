@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (connectedPieces == 2 && gameLevel != 3 && SceneManager.GetActiveScene().buildIndex != 4)
+        if (connectedPieces == 3 && gameLevel != 3 && SceneManager.GetActiveScene().buildIndex != 4)
         {
             connectedPieces = 0;
             gameLevel++;
@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
             StartCoroutine(loadLevel(gameLevel));
         }
 
-        if (gameLevel == 3 && connectedPieces == 2)
+        if (gameLevel == 3 && connectedPieces == 3)
         {
             connectedPieces = 0;
             gameLevel = 1;
@@ -47,6 +47,8 @@ public class GameManager : MonoBehaviour
 
     IEnumerator loadLevel(int level)
     {
+        yield return new WaitForSeconds(3);
+
         SceneManager.LoadScene("FactScreen");
 
         yield return new WaitForSeconds(5);
