@@ -43,20 +43,10 @@ public class GameManager : MonoBehaviour
 
             SceneManager.LoadScene("EndMenu");
         }
-
-        if(gameLevel == 1 | gameLevel == 2| gameLevel == 3)  {
-
-            yield return new WaitForSeconds(10);
-
-            SceneManager.LoadScene("MainMenu");
-        }
-
-       
     }
 
     IEnumerator loadLevel(int level)
     {
-        
         yield return new WaitForSeconds(3);
 
         SceneManager.LoadScene("FactScreen");
