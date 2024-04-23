@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 101
+  controlID: 100
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 454
     height: 939
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -321,7 +321,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -329,16 +329,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\samue\Documents\University\Collaborative-Practice\EnzymeGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 68620000
-    m_LastClickedID: 25192
-    m_ExpandedIDs: 000000006862000000ca9a3bffffff7f
+    m_SelectedIDs: 24620000
+    m_LastClickedID: 25124
+    m_ExpandedIDs: 000000000462000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -366,7 +366,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000068620000
+    m_ExpandedIDs: 0000000004620000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -506,9 +506,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: be610000
+      m_SelectedIDs: 30610000
       m_LastClickedID: 0
-      m_ExpandedIDs: 3a82ffff9082ffff3e84ffffde9cffffe09effff7ea1ffff92a2ffff1aa3ffff60a3ffffa6a3ffff1ea4ffff68a7ffffb4a7fffff8a7ffff3ea8ffff56b6ffff1eb8ffff82b8ffffecbcffff3acaffff7ecaffffdad2ffff9ed6fffffcd7ffffb0d9ffff88dbffffa8dfffff10e2ffffa8e2ffff3ee3ffff82e3ffff88e6ffff9ef7fffff4ffffff02620000106200001a620000ec6f0000fc6f000006700000ac7b0000167c0000307c000084820000da830000d8850000
+      m_ExpandedIDs: e8a8ffff4eacffff16aeffffb8afffff04b2ffff76b4ffff2eb6ffff94b6ffffd8b6ffff6eb8fffffebbffff82bdffff84ceffffced0ffff20d5ffff64d5ffffaad5ffff2ad6ffffc0d6ffff38d7ffff0ed8ffff62daffff56deffff5cdfffffd0e0ffff80efffffc6efffff48f6ffff28f7ffff8af9fffff4ffffff686500006e65000078650000267b0000aa7b0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -901,9 +901,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 575.5528, y: 262.4726, z: 3.6356936}
+    m_Target: {x: 5.4897995, y: 3.000642, z: -0.13708906}
     speed: 2
-    m_Value: {x: 575.5528, y: 262.4726, z: 3.6356936}
+    m_Value: {x: 5.4897995, y: 3.000642, z: -0.13708906}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -953,9 +953,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 357.44055
+    m_Target: 9.550579
     speed: 2
-    m_Value: 357.44055
+    m_Value: 9.550579
   m_Ortho:
     m_Target: 1
     speed: 2

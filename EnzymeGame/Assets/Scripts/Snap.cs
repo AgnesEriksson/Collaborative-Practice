@@ -14,6 +14,13 @@ public class Snap : MonoBehaviour
 
     public GameObject prefab;
 
+    private AudioSource connectSound;
+
+    void Start()
+    {
+        connectSound = GetComponent<AudioSource>();
+    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if (isSnapped)
@@ -23,6 +30,7 @@ public class Snap : MonoBehaviour
 
         if (col.gameObject.tag == id)
         {
+            connectSound.Play();
             GameManager.instance.addPiece();
             GetComponent<SpriteRenderer>().sprite = connectedSprite;
             StartCoroutine(PrefabPlay());
