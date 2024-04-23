@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Experimental.AI;
 using UnityEngine.U2D;
 
 public class Snap : MonoBehaviour
@@ -9,6 +11,15 @@ public class Snap : MonoBehaviour
     public bool isSnapped = false;
 
     public Sprite connectedSprite;
+
+    public GameObject prefab;
+
+    private AudioSource connectSound;
+
+    void Start()
+    {
+        connectSound = GetComponent<AudioSource>();
+    }
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -19,13 +30,22 @@ public class Snap : MonoBehaviour
 
         if (col.gameObject.tag == id)
         {
+            connectSound.Play();
             GameManager.instance.addPiece();
             GetComponent<SpriteRenderer>().sprite = connectedSprite;
+            StartCoroutine(PrefabPlay());
             Destroy(col.gameObject);
             isSnapped = true;
 
             Destroy(gameObject.GetComponent<BoxCollider2D>());
             gameObject.AddComponent<BoxCollider2D>();
         }
+    }
+
+    IEnumerator PrefabPlay()
+    {
+        GameObject go = Instantiate(prefab, this.transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(2f);
+        Destroy(go);
     }
 }
