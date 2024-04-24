@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
-using UnityEditor.SearchService;
+/*using UnityEditor.SearchService;*/
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,14 +12,12 @@ public class GameManager : MonoBehaviour
     public int connectedPieces = 0;
     private int gameLevel = 1;
 
-    public float timeoutTime = 5f;
-
-    float Timer;
-    bool functionran = false;
+    float elapsedTimer;
+    bool inputtrue;
 
     private void Start()
     {
-        Timer = Time.realtimeSinceStartup;
+      
     }
 
     private void Awake()
@@ -36,35 +34,20 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-/*    IEnumerator CheckIdleTime()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(1f);
-
-            if (Time.time - lastInputTime >= timeoutTime)
-            {
-                SceneManager.LoadScene("MainMenu");
-            }
-        }
-    }*/
 
     // Update is called once per frame
     void Update()
     {
-        // Check if the player has been inactive for a certain amount of time
+        inputtrue = false;
         if (Input.anyKey || Input.anyKeyDown || Input.mousePosition != new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0))
         {
-            
-            Timer = Time.realtimeSinceStartup;
+            inputtrue = true;
         }
-        
-        if (Time.realtimeSinceStartup - Timer >= 5f)
+        Debug.Log(elapsedTimer);
+        Debug.Log(SceneManager.GetActiveScene().buildIndex);
+        if (elapsedTimer >= 30f && SceneManager.GetActiveScene().buildIndex != 0)
         {
-            /*            connectedPieces = 0;
-                        gameLevel = 1;
-
-                        SceneManager.LoadScene("MainMenu");*/
+            elapsedTimer = 0;
             StartCoroutine(timeOut());
 
         }
@@ -79,12 +62,17 @@ public class GameManager : MonoBehaviour
 
         if (gameLevel == 3 && connectedPieces == 3)
         {
-            if (!functionran)
-            {
-                functionran = true;
                 StartCoroutine(end());
-            }
 
+        }
+        if (SceneManager.GetActiveScene().buildIndex != 0 && !inputtrue)
+        {
+
+            elapsedTimer += Time.deltaTime;
+        }
+        else
+        {
+            elapsedTimer = 0;
         }
     }
 
@@ -94,7 +82,7 @@ public class GameManager : MonoBehaviour
 
         SceneManager.LoadScene("FactScreen");
 
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(7);
 
         SceneManager.LoadScene(level.ToString());
     }
@@ -106,7 +94,6 @@ public class GameManager : MonoBehaviour
         gameLevel = 1;
 
         yield return new WaitForSeconds(1);
-/*        functionran = false;*/
         SceneManager.LoadScene("EndMenu");
 
     }
